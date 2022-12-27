@@ -43,8 +43,6 @@ class App(customtkinter.CTk):
         self.sidebar_button_about = customtkinter.CTkButton(self.sidebar_frame, text="About", command=self.sidebar_button_event)
         self.sidebar_button_about.grid(row=5, column=0)
         
-
-
         self.appearance_mode_label = customtkinter.CTkLabel(self.sidebar_frame,text="")
         self.appearance_mode_label.grid(row=6, column=0, padx=20, pady=(10, 0))
         self.calendar = Calendar(self.sidebar_frame)
@@ -62,14 +60,24 @@ class App(customtkinter.CTk):
         #self.photo_label = Label(image=ImageTk.PhotoImage(Image.fromarray(data)))
         #img = ImageTk.PhotoImage(Image.open(r"C:\Users\MonsterPC\Desktop\cv\1616751276754.jpg"))
         self.main_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
-        self.main_frame.grid(row=0, column=1, rowspan=5, sticky="nsew")
+        self.main_frame.grid(row=0, column=1, rowspan=5,columnspan=3, sticky="nsew")
         self.main_frame.grid_rowconfigure(5)
         self.main_frame.grid_columnconfigure(3)
+        self.main_frame_label = customtkinter.CTkLabel(self.main_frame,text="")
+        self.main_frame_label.grid(row=1, column=0, padx=20, pady=(10, 0))
+        self.main_frame_label2= customtkinter.CTkLabel(self.main_frame,text="")
+        self.main_frame_label2.grid(row=2, column=0, padx=20, pady=(10, 0))
         img = customtkinter.CTkImage(light_image=Image.open(r"C:\Users\MonsterPC\Desktop\cv\1616751276754.jpg"), size=(100, 100))
         self.picture_label=customtkinter.CTkLabel(self.main_frame,image=img,text="")
-        self.picture_label.grid(row=2, column=2)
+        self.picture_label.grid(row=3, column=1,padx=20, pady=(10, 10))
+        self.picture_label2=customtkinter.CTkLabel(self.main_frame,image=img,text="")
+        self.picture_label2.grid(row=3, column=2,padx=20, pady=(10, 10))
+        self.picture_label3=customtkinter.CTkLabel(self.main_frame,image=img,text="")
+        self.picture_label3.grid(row=3, column=3,padx=20, pady=(10, 10))
+        self.main_frame_label3 = customtkinter.CTkLabel(self.main_frame,text="")
+        self.main_frame_label3.grid(row=4, column=0, padx=20, pady=(10, 0))
         self.main_frame_button = customtkinter.CTkButton(self.main_frame, text="Dinle")
-        self.main_frame_button.grid(row=5, column=3,padx=20, pady=(10, 10))
+        self.main_frame_button.grid(row=5, column=2)
        
        
         '''
